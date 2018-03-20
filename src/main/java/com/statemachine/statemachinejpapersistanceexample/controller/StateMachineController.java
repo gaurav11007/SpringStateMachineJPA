@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.statemachine.StateMachine;
 import org.springframework.statemachine.service.StateMachineService;
 import org.springframework.util.ObjectUtils;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -27,13 +26,6 @@ public class StateMachineController {
 	@Autowired
 	private StateMachineService<States, Events> stateMachineService;
 	
-	@RequestMapping(value = "/avc/{guid}", method = RequestMethod.GET)
-	public String getUnderwritingDecision(@PathVariable("guid") String guid) {
-		System.out.println(guid);
-		return null;
-	}
-	
-	
 	@RequestMapping(value = "/init",method = RequestMethod.POST)
     public void init(@RequestBody Map<String, String> parameters) {
 		System.out.println("Inside of StateMachine Controller : INIT");
@@ -51,7 +43,7 @@ public class StateMachineController {
 	}
 	
 	@RequestMapping(value = "/proceed",method = RequestMethod.POST)
-	public void start(@RequestBody Map<String, String> parameters) {
+	public void proceed(@RequestBody Map<String, String> parameters) {
 		System.out.println("Inside of  StateMachine Controller : PROCEED ");
 		try {
 			// Get New StateMachine

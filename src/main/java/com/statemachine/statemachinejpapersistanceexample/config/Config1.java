@@ -5,10 +5,6 @@ import java.util.EnumSet;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpMethod;
-import org.springframework.http.MediaType;
-import org.springframework.http.ResponseEntity;
 import org.springframework.statemachine.StateContext;
 import org.springframework.statemachine.action.Action;
 import org.springframework.statemachine.config.EnableStateMachineFactory;
@@ -26,8 +22,6 @@ import org.springframework.statemachine.persist.StateMachineRuntimePersister;
 import org.springframework.statemachine.service.DefaultStateMachineService;
 import org.springframework.statemachine.service.StateMachineService;
 import org.springframework.statemachine.state.State;
-import org.springframework.web.client.RestTemplate;
-
 import com.statemachine.statemachinejpapersistanceexample.enums.Events;
 import com.statemachine.statemachinejpapersistanceexample.enums.States;
 
